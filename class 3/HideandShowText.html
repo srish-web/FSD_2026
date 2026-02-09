@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Hello World!!</p>
+    <button class="btn">Show and Hide</button>
+    <script>
+        let btn = document.querySelector(".btn");
+        let para = document.querySelector("#text");
+        console.log(para);
+        function func(){
+            if(para.style.display === "none"){
+                para.style.display = "block";
+            }else{
+                para.style.display = "none";
+            }
+        }
+        btn.addEventListener("click", func);
+    </script>
+</body>
+</html>

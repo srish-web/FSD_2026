@@ -1,0 +1,17 @@
+.obj{
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#on{
+    margin-top: auto;
+    height: 30px;
+    width: 40px;
+}
+#off{
+    margin-top: auto;
+    height: 30px;
+    width: 40px;
+}
