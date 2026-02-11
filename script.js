@@ -98,7 +98,6 @@ let strnum = "123";
 let convert = Number(strnum);
 console.log(strnum+10);
 console.log(convert+10);
-
 console.log(typeof(strnum));
 console.log(typeof(convert));
 
