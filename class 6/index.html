@@ -91,6 +91,10 @@ function displayStudents() {
         Added On: ${date.toLocaleDateString()}
         `;
         list.appendChild(li);
+        const btn = document.createElement("button");
+        btn.innerText = "Delete";
+        li.appendChild(btn);
+        btn.addEventListener("click", removeStudent(e));
     });
     calculateAverage();
 }
@@ -110,6 +114,11 @@ function clearFields() {
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("marks").value = "";
+}
+function removeStudent(e){
+    const list = document.getElementById("studentList");
+    console.log(e);
+    // list.removeChild("li");
 }
 
 </script>
