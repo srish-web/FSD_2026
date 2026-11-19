@@ -1,0 +1,163 @@
+/* Import Modern Font */
+@import url('https://googleapis.com');
+
+/* Global Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Form Container Card */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Text */
+h2 {
+    color: #1a202c;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Form Structural Layout */
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+label {
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+/* Standard Input, Select, and Textarea Fields */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #334155;
+    background-color: #fff;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Input Focus States */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Placeholder Styling */
+::placeholder {
+    color: #94a3b8;
+}
+
+/* Textarea Custom Fixes */
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Radio Button Group Container */
+.gender-group {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+/* Individual Radio Option Alignment */
+.gender-option {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    color: #334155;
+    cursor: pointer;
+}
+
+.gender-option input[type="radio"] {
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+    accent-color: #4f46e5;
+    cursor: pointer;
+}
+
+/* Error Messages styling */
+.error {
+    color: #dc2626;
+    font-size: 12.5px;
+    margin-top: 5px;
+    min-height: 18px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #4338ca;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Layout adjustments for smaller screen profiles */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .gender-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

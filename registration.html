@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm">
+
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <span id="nameError" class="error"></span>
+
+        <label>Email:</label>
+        <input type="text" id="email" placeholder="Enter your email">
+        <span id="emailError" class="error"></span>
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter 10-digit phone number">
+        <span id="phoneError" class="error"></span>
+
+        <label>Gender:</label>
+        <input class="gender" type="radio" name="gender" value="Male"> Male
+        <input class="gender" type="radio" name="gender" value="Female"> Female
+        <input class="gender" type="radio" name="gender" value="Other"> Other
+        <span id="genderError" class="error"></span>
+
+        <label>Date of Birth:</label>
+        <input type="date" id="dob">
+        <span id="dobError" class="error"></span>
+
+        <label>Course:</label>
+        <select id="course">
+            <option value="">Select Course</option>
+            <option value="CSE">Computer Science Engineering</option>
+            <option value="ECE">Electronics Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="CE">Civil Engineering</option>
+        </select>
+        <span id="courseError" class="error"></span>
+
+        <label>Address:</label>
+        <textarea id="address" rows="4"
+                  placeholder="Enter your address"></textarea>
+        <span id="addressError" class="error"></span>
+
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <span id="passwordError" class="error"></span>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+
+<script>
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let dob = document.getElementById("dob").value;
+    let course = document.getElementById("course").value;
+    let address = document.getElementById("address").value.trim();
+    let password = document.getElementById("password").value;
+
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    document.querySelectorAll(".error").forEach(function(error) {
+        error.textContent = "";
+    });
+
+    let valid = true;
+
+    let namePattern = /^[A-Za-z ]+$/;
+
+    if (name === "") {
+        document.getElementById("nameError").textContent =
+            "Name is required";
+        valid = false;
+    }
+    else if (!namePattern.test(name)) {
+        document.getElementById("nameError").textContent =
+            "Name should contain only letters";
+        valid = false;
+    }
+
+   
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        document.getElementById("emailError").textContent =
+            "Email is required";
+        valid = false;
+    }
+    else if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent =
+            "Enter a valid email address";
+        valid = false;
+    }
+
+    let phonePattern = /^[0-9]{10}$/;
+
+    if (phone === "") {
+        document.getElementById("phoneError").textContent =
+            "Phone number is required";
+        valid = false;
+    }
+    else if (!phonePattern.test(phone)) {
+        document.getElementById("phoneError").textContent =
+            "Phone number must contain exactly 10 digits";
+        valid = false;
+    }
+
+ 
+    if (!gender) {
+        document.getElementById("genderError").textContent =
+            "Please select your gender";
+        valid = false;
+    }
+
+    if (dob === "") {
+        document.getElementById("dobError").textContent =
+            "Date of birth is required";
+        valid = false;
+    }
+
+    if (course === "") {
+        document.getElementById("courseError").textContent =
+            "Please select a course";
+        valid = false;
+    }
+
+    if (address === "") {
+        document.getElementById("addressError").textContent =
+            "Address is required";
+        valid = false;
+    }
+    else if (address.length < 10) {
+        document.getElementById("addressError").textContent =
+            "Address must contain at least 10 characters";
+        valid = false;
+    }
+
+    if (password === "") {
+        document.getElementById("passwordError").textContent =
+            "Password is required";
+        valid = false;
+    }
+    else if (password.length < 6) {
+        document.getElementById("passwordError").textContent =
+            "Password must contain at least 6 characters";
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Registration Successful!");
+        document.getElementById("registrationForm").reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

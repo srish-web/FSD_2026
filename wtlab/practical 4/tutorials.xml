@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="tutorials.css"?>
+
+
+<!DOCTYPE tutorials SYSTEM "tutorials.dtd">
+
+<tutorials>
+    <tutorial id="T01">
+        <title>Introduction to XML</title>
+        <author>Jane Doe</author>
+        <category>Web Development</category>
+        <duration>45 Mins</duration>
+        <description>Learn the foundational building blocks of Extensible Markup Language.</description>
+    </tutorial>
+    
+    <tutorial id="T02">
+        <title>Mastering CSS Layouts</title>
+        <author>John Smith</author>
+        <category>Design</category>
+        <duration>120 Mins</duration>
+        <description>An in-depth guide exploring Flexbox, CSS Grid, and responsive design systems.</description>
+    </tutorial>
+</tutorials>

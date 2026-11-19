@@ -1,0 +1,9 @@
+<!ELEMENT tutorials (tutorial+)>
+<!ELEMENT tutorial (title, author, category, duration, description)>
+<!ATTLIST tutorial id ID #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
